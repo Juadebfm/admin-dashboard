@@ -1,0 +1,5 @@
+@media (min-width: 280px) and (max-width: 768px) {
+  .record-list {
+    overflow-x: scroll;
+  }
+}
