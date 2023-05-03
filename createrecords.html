@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./createRecords.css" />
+
+    <title>ZLG | Create Records</title>
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.ico" />
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+      <a href="#" class="brand">
+        <i class="bx bx-plus-medical"></i> <span class="text">ZLG</span>
+      </a>
+      <ul class="side-menu top">
+        <li>
+          <a href="./index.html">
+            <i class="bx bxs-dashboard"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="./medicalRecords.html">
+            <i class="bx bx-plus-medical"></i>
+            <span class="text">Medical Records</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="#">
+            <i class="bx bxs-doughnut-chart"></i>
+            <span class="text">Create Records</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-bar-chart"></i>
+            <span class="text">Data Representation</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-group"></i>
+            <span class="text">Create Admin</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="side-menu">
+        <li>
+          <a href="#" class="logout">
+            <i class="bx bxs-log-out-circle"></i>
+            <span class="text" onclick="logout()">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- SIDEBAR -->
+
+    <!-- CONTENT -->
+    <section id="content">
+      <!-- NAVBAR -->
+      <nav>
+        <i class="bx bx-menu"></i>
+        <a href="#" class="nav-link">Categories</a>
+        <form action="#">
+          <div class="form-input">
+            <input type="search" placeholder="Search..." />
+            <button type="submit" class="search-btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <label for="switch-mode" class="switch-mode"></label>
+        <a href="#" class="notification">
+          <i class="bx bxs-bell"></i>
+          <span class="num">8</span>
+        </a>
+        <a href="#" class="profile">
+          <img src="img/people.png" />
+        </a>
+      </nav>
+      <!-- NAVBAR -->
+
+      <!-- MAIN -->
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Create Medical Records</h1>
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Dashboard</a>
+              </li>
+            </ul>
+          </div>
+          <a href="#" class="btn-download">
+            <i class="bx bxs-cloud-download"></i>
+            <span class="text">Download PDF</span>
+          </a>
+        </div>
+
+        <div class="table-data">
+          <div class="order">
+            <div class="head">
+              <h3>Input Patient Records</h3>
+            </div>
+            <form action="">
+              <label for="name">
+                <span>Name</span>
+                <input type="text" id="name" placeholder="Patient name" />
+              </label>
+              <label for="card number">
+                <span>Patient Card No</span>
+
+                <input
+                  type="text"
+                  id="cardnumber"
+                  placeholder="Patient card number"
+                />
+              </label>
+              <label for="age">
+                <span>Patient Age</span>
+
+                <input type="number" id="age" placeholder="Patient age" />
+              </label>
+              <label for="sex" class="sex">
+                <span>Patient Sex</span>
+
+                <select name="" id="sex">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </label>
+              <label for="tel">
+                <span>Patient Number</span>
+
+                <input type="tel" id="phonenumber" placeholder="Phone number" />
+              </label>
+              <label for="address">
+                <span>Patient Address</span>
+                <input type="text" id="address" placeholder="Address" />
+              </label>
+              <label for="marital status" class="marital-status">
+                <span>Patient Marital Status</span>
+
+                <select id="maritalstatus">
+                  <option value="Single">Single</option>
+                  <option value="Married">Married</option>
+                  <option value="Divorced">Divorced</option>
+                </select>
+              </label>
+              <label for="next-of-kin">
+                <span>Patient Next Of Kin</span>
+
+                <input type="text" id="nextofkin" placeholder="Next of kin" />
+              </label>
+              <label for="next-of-kin-tel">
+                <span>Patient Next Of Kin Number</span>
+
+                <input
+                  type="tel"
+                  id="nextofkinphonenumber"
+                  placeholder="Next of kin number"
+                />
+              </label>
+              <label for="relationship">
+                <span>Relationship</span>
+
+                <input
+                  type="text"
+                  id="relationship"
+                  placeholder="Relationship"
+                />
+              </label>
+              <label for="blood pressure">
+                <span>Patient BP</span>
+
+                <input type="text" id="bloodpressure" placeholder="BP" />
+              </label>
+              <label for="Temperature">
+                <span>Patient Temp.</span>
+
+                <input type="text" id="temperature" placeholder="Temp" />
+              </label>
+              <label for="Pulse">
+                <span>Patient Pulse</span>
+
+                <input type="number" id="pulse" placeholder="Pulse" />
+              </label>
+              <label for="Weight">
+                <span>Patient Weight (KG)</span>
+
+                <input type="number" id="weight" placeholder="Weight" />
+              </label>
+              <label for="urinanalysis">
+                <span>Patient Urinanalysis</span>
+
+                <input
+                  type="text"
+                  id="urinanalysis"
+                  placeholder="Urinanalysis"
+                />
+              </label>
+              <label for="blood-group">
+                <span>Patient Blood Group</span>
+
+                <input type="text" id="blood" placeholder="Blood Group" />
+              </label>
+              <label for="bilirubin">
+                <span>Patient Bilirubin</span>
+
+                <input type="text" id="bilirubin" placeholder="Bilirubin" />
+              </label>
+              <label for="urobilinogen">
+                <span>Patient Urobilinogen</span>
+
+                <input
+                  type="text"
+                  id="urobilinogen"
+                  placeholder="Urobilinogen"
+                />
+              </label>
+              <label for="ketones">
+                <span>Patient Ketones</span>
+
+                <input type="text" id="ketones" placeholder="Ketones" />
+              </label>
+              <label for="glucose">
+                <span>Patient Glucose</span>
+
+                <input type="text" id="glucose" placeholder="Glucose" />
+              </label>
+              <label for="protein">
+                <span>Patient Protein</span>
+
+                <input type="text" id="protein" placeholder="Protein" />
+              </label>
+              <label for="nitrite">
+                <span>Patient Nitrite</span>
+
+                <input type="text" id="nitrite" placeholder="Nitrite" />
+              </label>
+              <label for="leukocytes">
+                <span>Patient Leukocytes</span>
+
+                <input type="text" id="leukocytes" placeholder="Leukocytes" />
+              </label>
+              <label for="ph">
+                <span>Patient PH Level</span>
+
+                <input type="text" id="ph" placeholder="PH" />
+              </label>
+              <label for="specific_gravity">
+                <span>Patient Specific Gravity</span>
+
+                <input
+                  type="text"
+                  id="specificgravity"
+                  placeholder="Specific_gravity"
+                />
+              </label>
+              <button type="submit" onclick="createMedicalRecords(event)">
+                Create Records
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+      <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
+
+    <!-- footer -->
+    <div class="footer">
+      <p>
+        Designed by <a href="#">Juadeb Gabriel </a>
+        <span id="date"></span>
+      </p>
+    </div>
+    <!-- End of footer -->
+
+    <script src="script.js"></script>
+    <script src="./createRecords.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

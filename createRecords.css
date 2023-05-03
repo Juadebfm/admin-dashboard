@@ -1,0 +1,57 @@
+.order form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  font-family: var(--poppins);
+}
+
+.order form label {
+  margin-top: 20px;
+}
+
+.order form label span {
+  font-size: 15px;
+}
+
+.order form label input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 10px;
+}
+
+.order form button {
+  border: none;
+  background: #3c91e6;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  margin-top: 25px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+::placeholder {
+  font-size: 14px;
+}
+
+.sex,
+.marital-status {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10rem;
+}
+
+.sex select,
+.marital-status select {
+  padding: 0.8rem;
+  font-family: inherit;
+  color: #fff;
+  background-color: #3c91e6;
+  border: 1px solid #3c91e6;
+}
+
+.sex select option,
+.marital-status select option {
+  font-family: inherit;
+}
