@@ -9,38 +9,56 @@ function displayMedicalRecords() {
   };
 
   fetch(
-    "https://zlglobalalliance.com.ng/api/get-medical-records?page=0",
+    "https://zlglobalalliance.com.ng/api/get-medical-records-details/2",
     requestOptions
   )
-    .then((response) => response.json()) // parse JSON response
+    .then((response) => response.json())
     .then((result) => {
-      console.log(result); // or display the result on the page using DOM manipulation
+      console.log(result);
 
-      // create table and add data rows
-      const table = document.createElement("table");
-      const headers = Object.keys(result.records.rows[0]);
-      const headerRow = document.createElement("tr");
-      headers.forEach((headerText) => {
-        const header = document.createElement("th");
-        const textNode = document.createTextNode(headerText);
-        header.appendChild(textNode);
-        headerRow.appendChild(header);
-      });
-      table.appendChild(headerRow);
+      // get the table body element
+      const tbody = document.getElementById("record_list");
 
-      result.records.rows.forEach((record) => {
-        const row = document.createElement("tr");
-        headers.forEach((header) => {
-          const cell = document.createElement("td");
-          const textNode = document.createTextNode(record[header]);
-          cell.appendChild(textNode);
-          row.appendChild(cell);
-        });
-        table.appendChild(row);
-      });
+      // create a new row element
+      const row = document.createElement("tr");
 
-      // append table to page
-      document.querySelector(".record_list").appendChild(table);
+      // create new table data elements and set their text content
+      const nameTd = document.createElement("td");
+      nameTd.textContent = result.name;
+
+      const ageTd = document.createElement("td");
+      ageTd.textContent = result.age;
+
+      const sexTd = document.createElement("td");
+      sexTd.textContent = result.sex;
+
+      const phoneTd = document.createElement("td");
+      phoneTd.textContent = result.phonenumber;
+
+      const addressTd = document.createElement("td");
+      addressTd.textContent = result.address;
+
+      const maritalStatusTd = document.createElement("td");
+      maritalStatusTd.textContent = result.maritalstatus;
+
+      const nextOfKinTd = document.createElement("td");
+      nextOfKinTd.textContent = result.next_of_kin;
+
+      const nextOfKinPhoneTd = document.createElement("td");
+      nextOfKinPhoneTd.textContent = result.next_of_kin_phonenumber;
+
+      // append the table data elements to the row
+      row.appendChild(nameTd);
+      row.appendChild(ageTd);
+      row.appendChild(sexTd);
+      row.appendChild(phoneTd);
+      row.appendChild(addressTd);
+      row.appendChild(maritalStatusTd);
+      row.appendChild(nextOfKinTd);
+      row.appendChild(nextOfKinPhoneTd);
+
+      // append the row to the table body
+      tbody.appendChild(row);
     })
     .catch((error) => console.log("error", error));
 }

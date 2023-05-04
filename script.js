@@ -74,3 +74,28 @@ function logout() {
   localStorage.removeItem("adminlogin");
   window.location.href = "./login.html";
 }
+
+// Dashboard
+function displayDashboard() {
+  const token = JSON.parse(localStorage.getItem("adminlogin")).token;
+  const requestOptions = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    redirect: "follow",
+  };
+
+  fetch("https://zlglobalalliance.com.ng/api/admin-dashboard", requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result); // log the result to the console
+      if (result.dashboard) {
+        // your existing code here
+      } else {
+        console.log("Error: No dashboard data found in API response");
+      }
+    })
+    .catch((error) => console.log("error", error));
+}
+window.onload = displayDashboard;

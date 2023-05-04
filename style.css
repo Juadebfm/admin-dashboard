@@ -197,6 +197,7 @@ body {
 #content nav .bx.bx-menu {
   cursor: pointer;
   color: var(--dark);
+  font-size: 25px;
 }
 #content nav .nav-link {
   font-size: 16px;

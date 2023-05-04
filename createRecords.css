@@ -19,6 +19,15 @@
   margin-top: 10px;
 }
 
+@media (max-width: 780px) {
+  .order form {
+    width: 100%;
+  }
+  .order form input {
+    width: 100%;
+  }
+}
+
 .order form button {
   border: none;
   background: #3c91e6;
@@ -40,6 +49,14 @@
   align-items: center;
   justify-content: start;
   gap: 10rem;
+}
+
+@media (max-width: 780px) {
+  .sex,
+  .marital-status {
+    justify-content: space-between;
+    gap: 1rem;
+  }
 }
 
 .sex select,
